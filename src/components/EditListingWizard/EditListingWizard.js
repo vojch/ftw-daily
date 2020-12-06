@@ -26,6 +26,7 @@ import EditListingWizardTab, {
   LOCATION,
   PRICING,
   PHOTOS,
+  SIZE,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.css';
 
@@ -40,6 +41,7 @@ export const TABS = [
   DESCRIPTION,
   FEATURES,
   POLICY,
+  SIZE,
   LOCATION,
   PRICING,
   ...availabilityMaybe,
@@ -60,6 +62,8 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelFeatures';
   } else if (tab === POLICY) {
     key = 'EditListingWizard.tabLabelPolicy';
+  } else if (tab === SIZE) {
+    key = 'EditListingWizard.tabLabelSize';
   } else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
   } else if (tab === PRICING) {
@@ -68,7 +72,7 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelAvailability';
   } else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
-  }
+  } 
 
   return intl.formatMessage({ id: key });
 };
@@ -107,6 +111,8 @@ const tabCompleted = (tab, listing) => {
       return !!availabilityPlan;
     case PHOTOS:
       return images && images.length > 0;
+    case SIZE:
+      return !!(publicData && publicData.size);
     default:
       return false;
   }
@@ -213,26 +219,27 @@ class EditListingWizard extends Component {
   }
 
   handlePublishListing(id) {
-    const { onPublishListingDraft, currentUser, stripeAccount } = this.props;
+    this.props.onPublishListingDraft(id);
+    // const { onPublishListingDraft, currentUser, stripeAccount } = this.props;
 
-    const stripeConnected =
-      currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id;
+    // const stripeConnected =
+    //   currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id;
 
-    const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
+    // const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
 
-    const requirementsMissing =
-      stripeAccount &&
-      (hasRequirements(stripeAccountData, 'past_due') ||
-        hasRequirements(stripeAccountData, 'currently_due'));
+    // const requirementsMissing =
+    //   stripeAccount &&
+    //   (hasRequirements(stripeAccountData, 'past_due') ||
+    //     hasRequirements(stripeAccountData, 'currently_due'));
 
-    if (stripeConnected && !requirementsMissing) {
-      onPublishListingDraft(id);
-    } else {
-      this.setState({
-        draftId: id,
-        showPayoutDetails: true,
-      });
-    }
+    // if (stripeConnected && !requirementsMissing) {
+    //   onPublishListingDraft(id);
+    // } else {
+    //   this.setState({
+    //     draftId: id,
+    //     showPayoutDetails: true,
+    //   });
+    // }
   }
 
   handlePayoutModalClose() {

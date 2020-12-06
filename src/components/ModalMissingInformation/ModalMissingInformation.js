@@ -82,6 +82,9 @@ class ModalMissingInformation extends Component {
       if (emailVerificationNeeded) {
         this.setState({ showMissingInformationReminder: EMAIL_VERIFICATION });
       } 
+      // else if (stripeAccountNeeded) {
+      //   this.setState({ showMissingInformationReminder: STRIPE_ACCOUNT });
+      // }
     }
   }
 
@@ -115,6 +118,9 @@ class ModalMissingInformation extends Component {
           />
         );
       } 
+      // else if (this.state.showMissingInformationReminder === STRIPE_ACCOUNT) {
+      //   content = <StripeAccountReminder className={classes} />;
+      // }
     }
 
     const closeButtonMessage = (
