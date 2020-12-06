@@ -7,7 +7,7 @@ import { findOptionsForSelectFilter } from '../../util/search';
 import { LISTING_STATE_DRAFT } from '../../util/types';
 import { ListingLink } from '../../components';
 import { EditListingDescriptionForm } from '../../forms';
-import config from '../../config';
+// import config from '../../config';
 
 import css from './EditListingDescriptionPanel.css';
 
@@ -40,20 +40,22 @@ const EditListingDescriptionPanel = props => {
     <FormattedMessage id="EditListingDescriptionPanel.createListingTitle" />
   );
 
-  const categoryOptions = findOptionsForSelectFilter('category', config.custom.filters);
+  // const categoryOptions = findOptionsForSelectFilter('category', config.custom.filters);
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
       <EditListingDescriptionForm
         className={css.form}
-        initialValues={{ title, description, category: publicData.category }}
+        // initialValues={{ title, description, category: publicData.category }}
+        initialValues={{ title, description }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
-          const { title, description, category } = values;
+          // const { title, description, category } = values;
+          const { title, description } = values;
           const updateValues = {
             title: title.trim(),
             description,
-            publicData: { category },
+            // publicData: { category },
           };
 
           onSubmit(updateValues);
@@ -64,7 +66,7 @@ const EditListingDescriptionPanel = props => {
         updated={panelUpdated}
         updateInProgress={updateInProgress}
         fetchErrors={errors}
-        categories={categoryOptions}
+        // categories={categoryOptions}
       />
     </div>
   );
