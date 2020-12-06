@@ -1050,5 +1050,15 @@
   "UserCard.showFullBioLink": "more",
   "UserCard.viewProfileLink": "View profile",
   "UserDisplayName.banned": "Banned user",
-  "UserDisplayName.deleted": "Deleted user"
+  "UserDisplayName.deleted": "Deleted user",
+
+  "EditListingWizard.tabLabelSize": "Size",
+  "EditListingSizeForm.size": "What's the size?",
+  "EditListingSizePanel.title": "Size",
+  "EditListingSizeForm.sizePlaceholder": "What's the size?",
+  "EditListingWizard.saveNewSize": "Save size",
+  "EditListingWizard.saveEditSize": "Save size",
+  "EditListingSizeForm.sizeRequired": "Size is required",
+  "ListingPage.sizeTitle": "Size"
+
 }
