@@ -123,7 +123,7 @@ const stateDescription = {
     },
     [STATE_ENQUIRY]: {
       on: {
-        [TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY]: STATE_PENDING_PAYMENT,
+        [TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY]: STATE_PREAUTHORIZED,
       },
     },
 
