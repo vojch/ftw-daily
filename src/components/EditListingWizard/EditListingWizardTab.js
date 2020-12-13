@@ -19,6 +19,7 @@ import {
   EditListingPricingPanel,
   EditListingSizePanel,
   EditListingCategoryPanel,
+  EditListingColorPanel,
 } from '../../components';
 
 import css from './EditListingWizard.css';
@@ -27,6 +28,7 @@ export const AVAILABILITY = 'availability';
 export const DESCRIPTION = 'description';
 export const SIZE = 'size';
 export const CATEGORY = 'category';
+export const COLOR = 'color';
 export const FEATURES = 'features';
 export const POLICY = 'policy';
 export const LOCATION = 'location';
@@ -39,6 +41,7 @@ export const SUPPORTED_TABS = [
   DESCRIPTION,
   CATEGORY,
   SIZE,
+  COLOR,
   FEATURES,
   POLICY,
   LOCATION,
@@ -185,6 +188,20 @@ const EditListingWizardTab = props => {
       return (
         <EditListingCategoryPanel
           {...panelProps(CATEGORY)}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
+    case COLOR: {
+      const submitButtonTranslationKey = isNewListingFlow
+        ? 'EditListingWizard.saveNewColor'
+        : 'EditListingWizard.saveEditColor';
+      return (
+        <EditListingColorPanel
+          {...panelProps(COLOR)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {
             onCompleteEditListingWizardTab(tab, values);

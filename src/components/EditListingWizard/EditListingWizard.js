@@ -22,6 +22,7 @@ import EditListingWizardTab, {
   AVAILABILITY,
   DESCRIPTION,
   CATEGORY,
+  COLOR,
   FEATURES,
   POLICY,
   LOCATION,
@@ -44,6 +45,7 @@ export const TABS = [
   FEATURES,
   POLICY,
   SIZE,
+  COLOR,
   LOCATION,
   PRICING,
   ...availabilityMaybe,
@@ -62,6 +64,8 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelDescription';
   } else if (tab === CATEGORY) {
     key = 'EditListingWizard.tabLabelCategory';
+  } else if (tab === COLOR) {
+    key = 'EditListingWizard.tabLabelColor';
   } else if (tab === FEATURES) {
     key = 'EditListingWizard.tabLabelFeatures';
   } else if (tab === POLICY) {
@@ -105,6 +109,8 @@ const tabCompleted = (tab, listing) => {
       return !!(description && title);
     case CATEGORY:
       return !!(publicData && publicData.category);
+    case COLOR:
+        return !!(publicData && publicData.color);
     case FEATURES:
       return !!(publicData && publicData.amenities);
     case POLICY:
