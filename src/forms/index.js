@@ -26,3 +26,4 @@ export { default as StripePaymentForm } from './StripePaymentForm/StripePaymentF
 export { default as StripeConnectAccountForm } from './StripeConnectAccountForm/StripeConnectAccountForm';
 export { default as TopbarSearchForm } from './TopbarSearchForm/TopbarSearchForm';
 export { default as EditListingSizeForm } from './EditListingSizeForm/EditListingSizeForm';
+export { default as EditListingCategoryForm } from './EditListingCategoryForm/EditListingCategoryForm';

@@ -73,25 +73,25 @@ export const filters = [
     // You can turn on/off ordering by distance from config.js file.
     config: {},
   },
-  {
-    id: 'category',
-    label: 'Category',
-    type: 'SelectSingleFilter',
-    group: 'secondary',
-    queryParamNames: ['pub_category'],
-    config: {
-      // "key" is the option you see in Flex Console.
-      // "label" is set here for the UI only.
-      // Note: label is not added through the translation files
-      // to make filter customizations a bit easier.
-      options: [
-        { key: 'smoke', label: 'Smoke' },
-        { key: 'electric', label: 'Electric' },
-        { key: 'wood', label: 'Wood' },
-        { key: 'other', label: 'Other' },
-      ],
-    },
-  },
+  // {
+  //   id: 'category',
+  //   label: 'Category',
+  //   type: 'SelectSingleFilter',
+  //   group: 'secondary',
+  //   queryParamNames: ['pub_category'],
+  //   config: {
+  //     // "key" is the option you see in Flex Console.
+  //     // "label" is set here for the UI only.
+  //     // Note: label is not added through the translation files
+  //     // to make filter customizations a bit easier.
+  //     options: [
+  //       { key: 'smoke', label: 'Smoke' },
+  //       { key: 'electric', label: 'Electric' },
+  //       { key: 'wood', label: 'Wood' },
+  //       { key: 'other', label: 'Other' },
+  //     ],
+  //   },
+  // },
   {
     id: 'amenities',
     label: 'Amenities',
@@ -140,6 +140,28 @@ export const filters = [
           key: 'own_food_allowed',
           label: 'Own food allowed',
         },
+      ],
+    },
+  },
+  {
+    id: 'category',
+    label: 'Category',
+    type: 'SelectSingleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_category'],
+    config: {
+      options: [
+        { key: 'accessories', label: 'Accessories' },
+        { key: 'bags', label: 'Bags' },
+        { key: 'dresses', label: 'Dresses' },
+        { key: 'intimates_sleepwear', label: 'Intimates & Sleepwear' },
+        { key: 'jackets_coats', label: 'Jackets & Coats' },
+        { key: 'jeans', label: 'Jeans' },
+        { key: 'jewelry', label: 'Jewelry' },
+        { key: 'pants', label: 'Pants' },
+        { key: 'shoes', label: 'Shoes' },
+        { key: 'shorts', label: 'Shorts' },
+        { key: 'skirts', label: 'Skirts' },
       ],
     },
   },
