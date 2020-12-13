@@ -58,6 +58,7 @@ import SectionHostMaybe from './SectionHostMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionSize from './SectionSize';
+import SectionCategory from './SectionCategory';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -447,8 +448,8 @@ export class ListingPageComponent extends Component {
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
                   />
-                  {/* <SectionSize options={sizeOptions} publicData={publicData} /> */}
-                  <SectionSize options={sizeOptions} />
+                  <SectionSize options={sizeOptions} publicData={publicData} />
+                  {/* <SectionSize options={sizeOptions} /> */}
                   <SectionDescriptionMaybe description={description} />
                   <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
                   <SectionRulesMaybe publicData={publicData} />
